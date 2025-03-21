@@ -1,0 +1,8 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int arr[5];
+	cout<<"print the size of:"<<sizeof(arr);
+  return 0;
+}
