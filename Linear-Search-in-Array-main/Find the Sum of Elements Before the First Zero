@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int sumOfDigit(int arr[],int size)
+{
+	int sum=0;
+	for(int i=0; i<size; i++)
+	{
+		if(arr[i]==0)
+		{
+			break;
+		}
+		sum+=arr[i];
+	}
+	return sum;
+}
+int main()
+{
+	int arr[]= {5, 10, 15, 0, 20, 25};
+	int size=sizeof(arr)/sizeof(arr[0]);
+	int ans=sumOfDigit(arr,size);
+	cout<<"Find the Sum of Elements Before the First Zero:"<<ans;
+	return 0;
+}

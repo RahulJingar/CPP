@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int pivot(vector<int>&nums) {
+	for(int i=0; i<nums.size(); i++) {
+		int lsum=0;
+		int rsum=0;
+		for(int j=0; j<i; j++)
+			lsum+=nums[j];
+		for(int j=i+1; j<nums.size(); j++)
+			rsum+=nums[j];
+		cout<<i<<" "<<lsum<<" "<<rsum<<endl;
+		if(lsum==rsum)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int main()
+{
+	vector<int>nums = {1,7,3,6,5,6};
+	pivot(nums);
+	return 0;
+}

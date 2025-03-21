@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int minimumElement(int arr[],int size)
+{
+	int min = 0;
+	for(int i = 0; i < size; i++)
+	{
+		if(arr[i] < min)
+		{
+			min = arr[i];
+		}
+	}
+	return min;
+}
+int main()
+{
+	int arr[] = {4,5,4,6,5,4,2,1,-5,-4};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	int ans = minimumElement(arr,size);
+	cout<<"Minimu Element of:"<<ans<<endl;
+	return 0;
+}

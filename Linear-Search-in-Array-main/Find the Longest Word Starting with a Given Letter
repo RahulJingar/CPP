@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+string linearSearch(string arr[],int size,char letter)
+{
+    string longest=" ";
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i][0]==letter && arr[i].length()>longest.length())
+        longest=arr[i];
+    }
+    return longest;
+}
+int main()
+{
+    string arr[]={"tiger", "table", "template", "top"};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    char letter='t';
+    string ans=linearSearch(arr,size,letter);
+    cout<<"Find the Longest Word Starting with a Given Letter:"<<ans;
+    return 0;
+}

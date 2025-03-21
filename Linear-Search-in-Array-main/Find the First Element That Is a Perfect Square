@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+bool linearSearch(int num)
+{
+	for(int i=0; i<num; i++)
+	{
+		if(i*i==num)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+void findSquare(int arr[],int size)
+{
+	for(int i=0; i<size; i++)
+	{
+		if(linearSearch(arr[i]))
+		{
+			cout<<"Find the First Element That Is a Perfect Square:"<<arr[i]<<endl;
+			cout<<"Find the First Element That Is a Perfect Square in position:"<<i;
+			return;
+		}
+	}
+}
+int main()
+{
+	int arr[]= {10, 15, 36, 49, 50, 64, 81};
+	int size=sizeof(arr)/sizeof(arr[0]);
+	findSquare(arr,size);
+	return 0;
+}

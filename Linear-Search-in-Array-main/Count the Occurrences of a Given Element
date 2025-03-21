@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void countOccurence(int arr[],int size,int duplicate)
+{
+	int count=0;
+	for(int i=0; i<size; i++)
+	{
+		if(arr[i]==duplicate)
+		{
+			count++;
+		}
+	}
+	cout << "Count the Occurrences of a Given Element: " << count;
+}
+int main()
+{
+	int arr[]= {4, 5, 6, 4, 7, 4, 8};
+	int size=sizeof(arr)/sizeof(arr[0]);
+	int duplicate=4;
+	countOccurence(arr,size,duplicate);
+	return 0;
+}
