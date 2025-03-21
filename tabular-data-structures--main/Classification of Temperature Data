@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct findMosam
+{
+	vector<int>cold;
+	vector<int>hot;
+	vector<int>warm;
+};
+findMosam checkWarm(vector<int>num)
+{
+	vector<int>cold;
+	vector<int>hot;
+	vector<int>warm;
+	for(auto it:num)
+	{
+		if(it>20 && it<30)
+		{
+			cold.push_back(it);
+		}
+		else if(it>30 && it<50)
+		{
+			hot.push_back(it);
+		}
+		else
+		{
+			warm.push_back(it);
+		}
+	}
+	return {cold,hot,warm};
+}
+int main()
+{
+	vector<int>num = {5,10,15,20,22,24,26,28,25,30,35,40,45,50};
+	findMosam data = checkWarm(num);
+	cout<<"cold"<<endl;
+	for(auto it:data.cold)
+	{
+		cout<<it<<" ";
+	}
+	cout<<endl<<"hot"<<endl;
+	for(auto it:data.hot)
+	{
+		cout<<it<<" ";
+	}
+	cout<<endl<<"warm"<<endl;
+	for(auto it:data.warm)
+	{
+	    cout<<it<<" ";
+	}
+
+}

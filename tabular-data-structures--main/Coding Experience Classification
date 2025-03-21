@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>Beginner;
+	vector<int>Intermediate;
+	vector<int>Expert;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>Beginner;
+	vector<int>Intermediate;
+	vector<int>Expert;
+	for(auto it:num)
+	{
+		if(it<3)
+		{
+			Beginner.push_back(it);
+		}
+		else if(it>3 && it<7)
+		{
+			Intermediate.push_back(it);
+		}
+		else
+		{
+			Expert.push_back(it);
+		}
+	}
+	return {Beginner,Intermediate,Expert};
+}
+void print(vector<int>num)
+{
+	for(auto it:num)
+	{
+		cout<<it<<" ";
+	}
+}
+int main()
+{
+	vector<int>num = {1,5,10};
+	checkClassify ans = classify(num);
+	cout<<"Beginner"<<endl;
+	print(ans.Beginner);
+	cout<<endl<<"Intermediate"<<endl;
+	print(ans.Intermediate);
+	cout<<endl<<"Expert"<<endl;
+	print(ans.Expert);
+	return 0;
+}

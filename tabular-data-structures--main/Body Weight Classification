@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct Classification
+{
+    vector<int>underWeight;
+    vector<int>healthy;
+    vector<int>obese;     
+};
+Classification checkWeight(vector<int>num)
+{
+    vector<int>underWeight;
+    vector<int>healthy;
+    vector<int>obese;
+    for(auto it:num)
+    {
+        if(it<50)
+        {
+            underWeight.push_back(it);
+        }
+        else if(it>50 && it<80)
+        {
+            healthy.push_back(it);
+        }
+        else{
+            obese.push_back(it);
+        }
+    }
+    return {underWeight,healthy,obese};
+}
+
+int main()
+{
+    vector<int>num {45, 78, 90, 55};
+    Classification ans = checkWeight(num);
+    cout<<"underWeight"<<endl;
+    for(auto it:ans.underWeight)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl<<"healthy"<<endl;
+    for(auto it:ans.healthy)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl<<"obese"<<endl;
+    for(auto it:ans.obese)
+    {
+        cout<<it<<" ";
+    }
+    return 0;
+}

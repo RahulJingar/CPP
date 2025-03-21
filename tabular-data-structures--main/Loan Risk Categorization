@@ -1,0 +1,50 @@
+// (Loan Risk) {300, 750, 500} ko High Risk (<400), Medium Risk (400-700), Low Risk (>700) categorize karo.
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+	vector<int>highRisk;
+	vector<int>mediumRisk;
+	vector<int>lowRisk;
+};
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>highRisk;
+	vector<int>mediumRisk;
+	vector<int>lowRisk;
+	for(auto it:num)
+	{
+		if(it<400)
+		{
+			highRisk.push_back(it);
+		}
+		else if(it>400 && it<700)
+		{
+			mediumRisk.push_back(it);
+		}
+		else
+		{
+			lowRisk.push_back(it);
+		}
+	}
+	return {highRisk,mediumRisk,lowRisk};
+}
+void loan(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {300, 750, 500};
+	checkCategorize ans = categorize(num);
+	cout<<"highRisk"<<endl;
+	loan(ans.highRisk);
+	cout<<endl<<"mediumRisk"<<endl;
+	loan(ans.mediumRisk);
+	cout<<endl<<"lowRisk"<<endl;
+	loan(ans.lowRisk);
+	return 0;
+}

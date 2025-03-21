@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct findCheck
+{
+    vector<int>Sedentary;
+    vector<int>Active;
+    vector<int>highlyActive;     
+};
+findCheck check(vector<int>num)
+{
+    vector<int>Sedentary;
+    vector<int>Active;
+    vector<int>highlyActive;
+    for(auto it:num)
+    {
+        if(it<5000)
+        {
+            Sedentary.push_back(it);
+        }
+        else if(it>5000 && it<10000)
+        {
+            Active.push_back(it);
+        }
+        else
+        {
+            highlyActive.push_back(it);
+        }
+    }
+    return {Sedentary,Active,highlyActive};
+}
+void repeat(vector<int>&num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+    cout<<endl;
+}
+int main()
+{
+    vector<int>num = {2000, 7000, 12000};
+    findCheck ans = check(num);
+    cout<<"Sedentary"<<endl;
+    repeat(ans.Sedentary);
+    cout<<"Active"<<endl;
+    repeat(ans.Active);
+    cout<<"highlyActive"<<endl;
+    repeat(ans.highlyActive);
+    return 0;
+}

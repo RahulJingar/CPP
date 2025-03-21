@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>Minimal;
+	vector<int>Moderate;
+	vector<int>Luxury;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>Minimal;
+	vector<int>Moderate;
+	vector<int>Luxury;
+	for(auto it:num)
+	{
+		if(it<5000)
+		{
+			Minimal.push_back(it);
+		}
+		else if(it>5000 && it<15000)
+		{
+			Moderate.push_back(it);
+		}
+		else
+		{
+			Luxury.push_back(it);
+		}
+	}
+	return {Minimal,Moderate,Luxury};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {1000, 8000, 20000};
+	checkClassify ans = classify(num);
+	cout<<"Minimal"<<endl;
+	print(ans.Minimal);
+	cout<<endl<<"Moderate"<<endl;
+	print(ans.Moderate);
+	cout<<endl<<"Luxury"<<endl;
+	print(ans.Luxury);
+	return 0;
+}

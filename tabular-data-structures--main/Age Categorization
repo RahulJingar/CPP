@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+    vector<int>young;
+    vector<int>middle;
+    vector<int>Senior;
+};
+
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>young;
+	vector<int>middle;
+	vector<int>Senior;
+	for(auto it:num)
+	{
+		if(it<30)
+		{
+			young.push_back(it);
+		}
+		else if(it>30 && it<60)
+		{
+			middle.push_back(it);
+		}
+		else
+		{
+			Senior.push_back(it);
+		}
+	}
+	return {young,middle,Senior};
+}
+void findAns(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {18, 45, 67, 80};
+	checkCategorize ans = categorize(num);
+	cout<<"young"<<endl;
+	findAns(ans.young);
+	cout<<endl<<"middle"<<endl;
+	findAns(ans.middle);
+	cout<<endl<<"Senior"<<endl;
+	findAns(ans.Senior);
+	return 0;
+}

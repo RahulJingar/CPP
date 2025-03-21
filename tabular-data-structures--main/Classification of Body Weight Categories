@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct chekingWeight
+{
+	vector<int>weight;
+	vector<int>healthy;
+	vector<int>overWeight;
+};
+chekingWeight checkWeight(vector<int>num)
+{
+	vector<int>weight;
+	vector<int>healthy;
+	vector<int>overWeight;
+	for(auto it:num)
+	{
+		if(it>5 && it<40)
+		{
+			weight.push_back(it);
+		}
+		else if(it>40 && it<60)
+		{
+			healthy.push_back(it);
+		}
+		else
+		{
+			overWeight.push_back(it);
+		}
+	}
+	return {weight,healthy,overWeight};
+}
+int main()
+{
+	vector<int>num = {10,20,30,40,50,60,70,90,80,15,25,36,45,54,65,59,74,78,85,90};
+	chekingWeight data = checkWeight(num);
+	cout<<"weight"<<endl;
+	for(auto it:data.weight)
+	{
+	    cout<<it<<" ";
+	}
+	cout<<endl<<"healthy"<<endl;
+	for(auto it: data.healthy)
+	{
+	    cout<<it<<" ";
+	}
+	cout<<endl<<"overWeight"<<endl;
+	for(auto it:data.overWeight)
+	{
+	    cout<<it<<" ";
+	}
+	return 0;
+}

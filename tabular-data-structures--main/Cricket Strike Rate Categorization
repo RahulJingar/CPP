@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+	vector<int>Defensive;
+	vector<int>Aggressive;
+	vector<int>powerHitter;
+};
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>Defensive;
+	vector<int>Aggressive;
+	vector<int>powerHitter;
+	for(auto it:num)
+	{
+		if(it<100)
+		{
+			Defensive.push_back(it);
+		}
+		else if(it>100 && it<140)
+		{
+			Aggressive.push_back(it);
+		}
+		else
+		{
+			powerHitter.push_back(it);
+		}
+	}
+	return {Defensive,Aggressive,powerHitter};
+}
+int main()
+{
+	vector<int>num = {90,130,150};
+	checkCategorize ans = categorize(num);
+	cout<<"Defensive"<<endl;
+	for(auto it:ans.Defensive)
+	{
+	    cout<<it;
+	}
+	cout<<endl<<"Aggressive"<<endl;
+	for(auto it:ans.Aggressive)
+	{
+	    cout<<it;
+	}
+	cout<<endl<<"powerHitter"<<endl;
+	for(auto it:ans.powerHitter)
+	{
+	    cout<<it;
+	}
+	return 0;
+}

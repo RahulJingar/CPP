@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+	vector<int>Elite;
+	vector<int>Intermediate;
+	vector<int>Beginner;
+};
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>Elite;
+	vector<int>Intermediate;
+	vector<int>Beginner;
+	for(auto it:num)
+	{
+		if(it<11)
+		{
+			Elite.push_back(it);
+		}
+		else if(it>11 && it<13)
+		{
+			Intermediate.push_back(it);
+		}
+		else
+		{
+			Beginner.push_back(it);
+		}
+	}
+	return {Elite,Intermediate,Beginner};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {10,12,15};
+	checkCategorize ans = categorize(num);
+	cout<<"Elite"<<endl;
+	print(ans.Elite);
+	cout<<endl<<"Intermediate"<<endl;
+	print(ans.Intermediate);
+	cout<<endl<<"Beginner"<<endl;
+	print(ans.Beginner);
+	return 0;
+}

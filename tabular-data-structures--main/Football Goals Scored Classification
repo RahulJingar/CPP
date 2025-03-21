@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>Good;
+	vector<int>Great;
+	vector<int>Elite;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>Good;
+	vector<int>Great;
+	vector<int>Elite;
+	for(auto it:num)
+	{
+		if(it<45)
+		{
+			Good.push_back(it);
+		}
+		else if(it>45 && it<55)
+	    {
+		Great.push_back(it);
+		}
+		else
+		{
+			Elite.push_back(it);
+		}
+	}
+	return {Good,Great,Elite};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it;
+    }
+}
+int main()
+{
+	vector<int>num = {50,60,40};
+	checkClassify result = classify(num);
+	cout<<"Good"<<endl;
+	print(result.Good);
+	cout<<endl<<"Great"<<endl;
+	print(result.Great);
+	cout<<endl<<"Elite"<<endl;
+	print(result.Elite);
+	return 0;
+}

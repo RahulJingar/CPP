@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+	vector<int>Average;
+	vector<int>good;
+	vector<int>Excellent;
+};
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>Average;
+	vector<int>good;
+	vector<int>Excellent;
+	for(auto it:num)
+	{
+		if(it<60)
+		{
+			Average.push_back(it);
+		}
+		else if(it>60 && it<85)
+		{
+			good.push_back(it);
+		}
+		else
+		{
+			Excellent.push_back(it);
+		}
+	}
+	return {Average,good,Excellent};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num {50, 80, 95};
+	checkCategorize ans = categorize(num);
+	cout<<"Average"<<endl;
+	print(ans.Average);
+	cout<<endl<<"good"<<endl;
+	print(ans.good);
+	cout<<endl<<"Excellent"<<endl;
+	print(ans.Excellent);
+	return 0;
+}

@@ -1,0 +1,52 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>athelete;
+	vector<int>normal;
+	vector<int>highRisk;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>athelete;
+	vector<int>normal;
+	vector<int>highRisk;
+	for(auto it:num)
+	{
+		if(it<60)
+		{
+			athelete.push_back(it);
+		}
+		else if(it>60 && it<90)
+		{
+			normal.push_back(it);
+		}
+		else
+		{
+			highRisk.push_back(it);
+		}
+	}
+	return {athelete,normal,highRisk};
+}
+int main()
+{
+	vector<int>num = {55, 80, 105, 70};
+	checkClassify ans = classify(num);
+	cout<<"athelete"<<endl;
+	for(auto it:ans.athelete)
+	{
+	    cout<<it<<" ";
+	}
+	cout<<endl<<"normal"<<endl;
+	for(auto it:ans.normal)
+	{
+	    cout<<it<<" ";
+	}
+	cout<<endl<<"highRisk"<<endl;
+	for(auto it:ans.highRisk)
+	{
+	    cout<<it<<" ";
+	}
+	return 0;
+}

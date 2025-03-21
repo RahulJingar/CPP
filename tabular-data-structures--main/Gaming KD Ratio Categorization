@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkCategorize
+{
+	vector<int>Casual;
+	vector<int>Competitive;
+	vector<int>Pro;
+};
+checkCategorize categorize(vector<int>num)
+{
+	vector<int>Casual;
+	vector<int>Competitive;
+	vector<int>Pro;
+	for(auto it:num)
+	{
+		if(it<3)
+		{
+			Casual.push_back(it);
+		}
+		else if(it>3 && it<7)
+		{
+			Competitive.push_back(it);
+		}
+		else
+		{
+			Pro.push_back(it);
+		}
+	}
+	return {Casual,Competitive,Pro};
+}
+int main()
+{
+	vector<int>num = {5,2,10};
+    checkCategorize ans =	categorize(num);
+    cout<<"Casual"<<endl;
+    for(auto it:ans.Casual)
+    {
+        cout<<it;
+    }
+    cout<<endl<<"Competitive"<<endl;
+    for(auto it:ans.Competitive)
+    {
+        cout<<it;
+    }
+    cout<<endl<<"Pro"<<endl;
+    for(auto it:ans.Pro)
+    {
+        cout<<it;
+    }
+    return 0;
+}

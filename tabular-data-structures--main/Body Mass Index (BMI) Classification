@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<float>Dehydrated;
+	vector<float>Normal;
+	vector<float>Excess;
+};
+checkClassify classify(vector<float>num)
+{
+	vector<float>Dehydrated;
+	vector<float>Normal;
+	vector<float>Excess;
+	for(auto it:num)
+	{
+		if(it<1)
+		{
+			Dehydrated.push_back(it);
+		}
+		else if(it>1 && it<3)
+		{
+			Normal.push_back(it);
+		}
+		else
+		{
+			Excess.push_back(it);
+		}
+	}
+	return {Dehydrated,Normal,Excess};
+}
+void noRepeat(vector<float>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<float>num = {0.5, 2, 3.5};
+	checkClassify ans = classify(num);
+	cout<<"Dehydrated"<<endl;
+	noRepeat(ans.Dehydrated);
+	cout<<endl<<"Normal"<<endl;
+	noRepeat(ans.Normal);
+	cout<<endl<<"Excess"<<endl;
+	noRepeat(ans.Excess);
+	return 0;
+}

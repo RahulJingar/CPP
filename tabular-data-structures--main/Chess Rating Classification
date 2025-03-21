@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>Beginner;
+	vector<int>Intermediate;
+	vector<int>Grandmaster;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>Beginner;
+	vector<int>Intermediate;
+	vector<int>Grandmaster;
+	for(auto it:num)
+	{
+		if(it<1500)
+		{
+			Beginner.push_back(it);
+		}
+		else if(it>1500 && it<2000)
+		{
+			Intermediate.push_back(it);
+		}
+		else
+		{
+			Grandmaster.push_back(it);
+		}
+	}
+	return {Beginner,Intermediate,Grandmaster};
+}
+
+int main()
+{
+	vector<int>num = {1000,1800,2500};
+	checkClassify res = classify(num);
+	cout<<"Beginner"<<endl;
+	for(auto it:res.Beginner)
+	{
+	    cout<<it;
+	}
+	cout<<endl<<"Intermediate"<<endl;
+	for(auto it:res.Intermediate)
+	{
+	    cout<<it;
+	}
+	cout<<endl<<"Grandmaster"<<endl;
+	for(auto it:res.Grandmaster)
+	{
+	    cout<<it;
+	}
+	return 0;
+}

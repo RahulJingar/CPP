@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct typingSpeed
+{
+	vector<int>Slow;
+	vector<int>Average;
+	vector<int>Fast;
+};
+typingSpeed categorize(vector<int>num)
+{
+	vector<int>Slow;
+	vector<int>Average;
+	vector<int>Fast;
+	for(auto it:num)
+	{
+		if(it<40)
+		{
+			Slow.push_back(it);
+		}
+		else if(it>40 && it<80)
+		{
+			Average.push_back(it);
+		}
+		else
+		{
+			Fast.push_back(it);
+		}
+	}
+	return {Slow,Average,Fast};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {20, 60, 120};
+	typingSpeed ans = categorize(num);
+	cout<<"Slow"<<endl;
+	print(ans.Slow);
+	cout<<endl<<"Average"<<endl;
+	print(ans.Average);
+	cout<<endl<<"Fast"<<endl;
+	print(ans.Fast);
+	return 0;
+}

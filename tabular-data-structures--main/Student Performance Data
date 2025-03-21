@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkpassfail
+{
+	vector<int>pass;
+	vector<int>average;
+	vector<int>fail;
+};
+checkpassfail passFail(vector<int>num)
+{
+	vector<int>pass;
+	vector<int>average;
+	vector<int>fail;
+	for(auto it:num)
+	{
+		if(it>80)
+		{
+			pass.push_back(it);
+		}
+		else if(it>50)
+		{
+			average.push_back(it);
+		}
+		else
+		{
+			fail.push_back(it);
+		}
+	}
+	return {pass,average,fail};
+}
+int main()
+{
+	vector<int>num = {32,34,36,44,50,56,94,97,84,87,68,96,74,44,64,69};
+	checkpassfail data = passFail(num);
+	cout<<"pass"<<endl;
+	for(auto it:data.pass)
+	{
+		cout<<it<<" ";
+	}
+	cout<<endl<<"average"<<endl;
+	for(auto it:data.average)
+	{
+		cout<<it<<" ";
+	}
+	cout<<endl<<"fail"<<endl;
+	for(auto it:data.fail)
+	{
+	    cout<<it<<" ";
+	}
+	return 0;
+}
+
+
+

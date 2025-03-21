@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>fail;
+	vector<int>pass;
+	vector<int>Distinction;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>fail;
+	vector<int>pass;
+	vector<int>Distinction;
+	for(auto it:num)
+	{
+		if(it<40)
+		{
+			fail.push_back(it);
+		}
+		else if(it>40 && it>75)
+		{
+			pass.push_back(it);
+		}
+		else
+		{
+			Distinction.push_back(it);
+		}
+	}
+	return {fail,pass,Distinction};
+}
+void print(vector<int>num)
+{
+    for(auto it:num)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+	vector<int>num = {35, 72, 90};
+	checkClassify ans = classify(num);
+	cout<<"fail"<<endl;
+	print(ans.fail);
+	cout<<endl<<"pass"<<endl;
+	print(ans.pass);
+	cout<<endl<<"Distinction"<<endl;
+	print(ans.Distinction);
+	return 0;
+}

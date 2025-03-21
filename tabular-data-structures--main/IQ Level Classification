@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct checkClassify
+{
+	vector<int>Below;
+	vector<int>Avg;
+	vector<int>Genius;
+};
+checkClassify classify(vector<int>num)
+{
+	vector<int>Below;
+	vector<int>Avg;
+	vector<int>Genius;
+	for(auto it:num)
+	{
+		if(it<100)
+		{
+			Below.push_back(it);
+		}
+		else if(it>100 && it<120)
+		{
+			Avg.push_back(it);
+		}
+		else
+		{
+			Genius.push_back(it);
+		}
+	}
+	return {Below,Avg,Genius};
+}
+void print(vector<int>num)
+{
+	for(auto it:num)
+	{
+		cout<<it<<" ";
+	}
+}
+int main()
+{
+	std::vector<int>num = {90, 110, 140};
+	checkClassify ans = classify(num);
+	cout<<"Below"<<endl;
+	print(ans.Below);
+	cout<<endl<<"avg"<<endl;
+	print(ans.Avg);
+	cout<<endl<<"Genius"<<endl;
+	print(ans.Genius);
+	return 0;
+}
