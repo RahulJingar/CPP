@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int findMin(int arr[5][5],int row,int col)
+{
+	int min=arr[0][0];
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; j<col; j++)
+		{
+			if(arr[i][j]<min)
+			{
+				min=arr[i][j];
+			}
+		}
+	}
+	return min;
+}
+int main()
+{
+	int arr[5][5]= {
+		{8,4,6,8,4},
+		{14,25,36,85,14},
+		{15,25,34,85,74},
+		{45,74,14,25,85},
+		{25,36,63,96,78},
+	};
+	int row=5;
+	int col=5;
+	cout<<"Find Minimum Value is:"<<findMin(arr,row,col);
+	return 0;
+}
+
+
