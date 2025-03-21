@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<string>v{"ram"};
+    v.push_back(" lakhan");
+    for(auto it:v)
+    {
+        cout<<it;
+    }
+    return 0;
+}

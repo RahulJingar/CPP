@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+void print(vector<int>v)
+{
+    cout<<"your output is:";
+    int size=v.size();
+    for(int i=0;i<size;i++)
+    {
+        cout<<v[i]<<" ";
+    }
+}
+int main()
+{
+    vector<int>v;
+    int n;
+    cout<<"enter the value of n:";
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        int d;
+        cout<<"enter the value of d:";
+        cin>>d;
+        v.push_back(d);
+    }
+    print(v);
+    return 0;
+}

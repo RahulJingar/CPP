@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+void reArrage(vector<int>&arr)
+{
+	int n = arr.size();
+	int index = 0;
+	int left = 0;
+	int right = n-1;
+	while(index <= right)
+	{
+		if(arr[index]==0)
+		{
+			swap(arr[index],arr[left]);
+			left++;
+			index++;
+		}
+		else if(arr[index]==2)
+		{
+			swap(arr[index],arr[right]);
+
+			right--;
+
+		}
+		else
+		{
+			index++;
+		}
+	}
+}
+int main()
+{
+	vector<int>arr = {2,0,2,1,1,0};
+	reArrage(arr);
+	for(int i=0; i<arr.size(); i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	return 0;
+}
+
+

@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<char>v{'w'};
+    v.push_back('r');
+    for(auto it:v)
+    {
+        cout<<it<<" ";
+    }
+    return 0;
+}
