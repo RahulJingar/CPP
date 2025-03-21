@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int maxdiffrence(int arr[],int size)
+{
+	int max=0;
+	for(int i=1; i<size; i++)
+	{
+		int diff=arr[i]-arr[i-1];
+		if(diff>max)
+		{
+			max=diff;
+		}
+	}
+	return max;
+}
+int main()
+{
+	int arr[]= {10,3,6,8,15,5};
+	int size=sizeof(arr)/sizeof(arr[0]);
+	int difference = maxdiffrence(arr,size);
+	cout<<"Find the Maximum Difference Between Two Consecutive Elements:"<<difference<<endl;
+	return 0;
+}
