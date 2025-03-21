@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int linearSearch(int arr[],int size)
+{
+    int small=1;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==small)
+        {
+            small++;
+        }
+    }
+    return small;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,8,9};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int smallMissingNumber = linearSearch(arr,size);
+    cout<<"missing number is:"<<smallMissingNumber;
+    return 0;
+}

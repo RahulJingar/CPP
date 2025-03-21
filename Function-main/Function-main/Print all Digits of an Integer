@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+void printAlldigit(int num)
+{
+    while(num)
+    {
+        int onePlaceDigit = num % 10;
+        cout<<"digit is:"<<onePlaceDigit<<endl;
+        num/=10;
+    }
+}
+int main()
+{
+    int n;
+    cout<<"enter the value of n = ";
+    cin>>n;
+    printAlldigit(n);
+}

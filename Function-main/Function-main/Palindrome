@@ -1,0 +1,27 @@
+// Palindrome Number
+#include<bits/stdc++.h>
+using namespace std;
+int palindromeNumber(int num)
+{
+    int ans=0;
+    while(num>0)
+    {
+        int rem=num%10;
+        ans=ans*10+rem;
+        num/=10;
+    }
+    return ans;
+}
+int main()
+{
+    int num;
+    cout<<"enter the value of num:";
+    cin>>num;
+    if(palindromeNumber(num)==1221){
+        cout<<"it is palindrome";
+    }
+    else{
+        cout<<"it is not palindrome";
+    }
+    return 0;
+}
