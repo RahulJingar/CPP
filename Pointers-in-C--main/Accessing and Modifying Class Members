@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+class members
+{
+    string libraryName;
+    string location;
+    int numberOfBooks;
+    public:
+    members()
+    {
+        libraryName = "null";
+        location = "null";
+        numberOfBooks = 0;
+    }
+    void display()
+    {
+        cout<<"libraryName:"<<libraryName<<", "<<"location:"<<location<<", "<<"numberOfBooks:"<<numberOfBooks<<endl;
+    }
+    void setdata()
+    {
+        cout<<"libraryName:";
+        cin>>libraryName;
+        cout<<"location:";
+        cin>>location;
+        cout<<"numberOfBooks:";
+        cin>>numberOfBooks;
+    }
+};
+int main()
+{
+    members *ptr = new members;
+    ptr->display();
+    ptr->setdata();
+    ptr->display();
+    delete ptr;
+    return 0;
+}

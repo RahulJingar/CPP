@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+class movie
+{
+    string little;
+    string director;
+    int releaseYear;
+    public:
+    movie()
+    {
+        little = "null";
+        director = "null";
+        releaseYear = 0;
+    }
+    void display()
+    {
+        cout<<"little:"<<little<<", "<<"director:"<<director<<", "<<"releaseYear:"<<releaseYear<<endl;
+    }
+    void setdata()
+    {
+        cout<<"little:";
+        cin>>little;
+        cout<<"director:";
+        cin>>director;
+        cout<<"releaseYear:";
+        cin>>releaseYear;
+    }
+};
+int main()
+{
+    movie *ptr = new movie;
+    ptr->display();
+    ptr->setdata();
+    ptr->display();
+    delete ptr;
+    return 0;
+}

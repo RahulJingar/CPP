@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+class details
+{
+    string restaurant;
+    string cuisineType;
+    int rating;
+    public:
+    details()
+    {
+        restaurant = "null";
+        cuisineType = "null";
+        rating = 0;
+    }
+    void display()
+    {
+        cout<<"restaurant:"<<restaurant<<", "<<"cuisineType:"<<cuisineType<<", "<<"rating:"<<rating<<endl;
+    }
+    void setdata()
+    {
+        cout<<"restaurant:";
+        cin>>restaurant;
+        cout<<"cuisineType:";
+        cin>>cuisineType;
+        cout<<"rating:";
+        cin>>rating;
+    }
+};
+int main()
+{
+    details *Provide = new details;
+    Provide->display();
+    Provide->setdata();
+    Provide->display();
+    delete Provide;
+    return 0;
+}

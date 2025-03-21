@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+class car
+{
+	int modelno;
+	string manufacturer;
+	int price;
+public:
+	car()
+	{
+		modelno=0;
+		manufacturer="null";
+		price=0;
+	}
+	void getDetails()
+	{
+		cout<<"model:"<<modelno<<" , manufacturer "<<manufacturer<<" , price "<<price<<endl;
+	}
+	void setDetails()
+	{
+		cout<<"enter model name:";
+		cin>>modelno;
+		cout<<"enter the manufacturer:";
+		cin>>manufacturer;
+		cout<<"enter the your price:";
+		cin>>price;
+	}
+};
+int main()
+{
+	car *ptr = new car;
+	ptr->getDetails();
+	ptr->setDetails();
+	ptr->getDetails();
+	delete ptr;
+	return 0;
+}
+
+

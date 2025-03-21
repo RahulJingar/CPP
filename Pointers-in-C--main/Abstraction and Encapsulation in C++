@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+class book
+{
+    string title;
+    string author;
+    int isbn;
+    public:
+    book()
+    {
+        title="null";
+        author="null";
+        isbn=0;
+    }
+    void display()
+    {
+        cout<<"title:"<<title<<", "<<"author"<<author<<", "<<"isbn"<<isbn<<endl;
+    }
+    void getdata()
+    {
+        cout<<"your title is:";
+        cin>>title;
+        cout<<"your author is:";
+        cin>>author;
+        cout<<"your isbn is:";
+        cin>>isbn;
+    }
+};
+int main()
+{
+    book *ptr = new book;
+    ptr->display();
+    ptr->getdata();
+    ptr->display();
+    delete ptr;
+    return 0;
+}

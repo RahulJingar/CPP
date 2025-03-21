@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+class members
+{
+    string name;
+    int cls;
+    string city;
+    string address;
+    public:
+    members()
+    {
+        name = "null";
+        cls = 0;
+        city = "null";
+        address = "null";
+    }
+    void display()
+    {
+        cout<<"name:"<<name<<", "<<"class:"<<cls<<", "<<"city:"<<city<<", "<<"address:"<<address<<endl;
+    }
+    void setdata()
+    {
+        cout<<"name:";
+        cin>>name;
+        cout<<"class:";
+        cin>>cls;
+        cout<<"city:";
+        cin>>city;
+        cout<<"address:";
+        cin>>address;
+    }
+};
+int main()
+{
+    members *ptr = new members;
+    ptr->display();
+    ptr->setdata();
+    ptr->display();
+    delete ptr;
+    return 0;
+}

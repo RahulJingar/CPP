@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+class constructors
+{
+    int courseID;
+    string courseName;
+    string credits;
+    public:
+    constructors()
+    {
+        courseID = 0;
+        courseName = "null";
+        credits = "null";
+    }
+    void display()
+    {
+        cout<<"courseID:"<<courseID<<", "<<"courseName:"<<courseName<<", "<<"credits:"<<credits<<endl;
+    }
+    void setdata()
+    {
+        cout<<"courseID:";
+        cin>>courseID;
+        cout<<"courseName:";
+        cin>>courseName;
+        cout<<"credits:";
+        cin>>credits;
+    }
+};
+int main()
+{
+    constructors *ptr = new constructors;
+    ptr->display();
+    ptr->setdata();
+    ptr->display();
+    delete ptr;
+    return 0;
+}

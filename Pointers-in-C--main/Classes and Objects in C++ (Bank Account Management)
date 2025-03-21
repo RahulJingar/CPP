@@ -1,0 +1,38 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+class money
+{
+	long accountNumber;
+	long balance;
+	string accountHoldeName;
+public:
+	money()
+	{
+		accountNumber=0;
+		balance=0;
+		accountHoldeName="null";
+	}
+	void display()
+	{
+	    cout<<"accountNumber:"<<accountNumber<<", "<<"balance"<<balance<<", "<<"accountHoldeName"<<accountHoldeName<<endl;
+	}
+	void getdata()
+	{
+	    cout<<"enter your account number:";
+	    cin>>accountNumber;
+	    cout<<"enter your balance:";
+	    cin>>balance;
+	    cout<<"enter your account holder name:";
+	    cin>>accountHoldeName;
+	}
+};
+int main()
+{
+	money *ptr = new money;
+	ptr->display();
+	ptr->getdata();
+	ptr->display();
+	delete ptr;
+	return 0;
+}
