@@ -1,0 +1,14 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+pair<int,int>findFirstLastElement(vector<int>arr)
+{
+	return {arr[0],arr[arr.size()-1]};
+}
+int main()
+{
+	vector<int>arr= {1,2,3,4,5,6,7,8,9};
+	pair<int,int>res=findFirstLastElement(arr);
+	cout<<"find the first element:"<<res.first<<" \n"<<"find the last element:"<<res.second;
+	return 0;
+}

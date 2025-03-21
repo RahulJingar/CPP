@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int sum(vector<int>arr)
+{
+    int sum=0;
+    for(auto it:arr)
+    {
+        sum+=it;
+    }
+    return sum;
+}
+float avg(vector<int>arr)
+{
+    int num=sum(arr);
+    int n=arr.size();
+    return num/n;
+}
+pair<int,float>sumavg(vector<int>arr)
+{
+    int s=sum(arr);
+    int a=avg(arr);
+    return {s,a};
+}
+int main()
+{
+    vector<int>arr={1,2,3,4,5,6,7,8,9};
+    pair<int,float>res=sumavg(arr);
+    cout<<"your sum value is:"<<res.first<<" \n"<<"your average value is:"<<res.second;
+    return 0;
+}

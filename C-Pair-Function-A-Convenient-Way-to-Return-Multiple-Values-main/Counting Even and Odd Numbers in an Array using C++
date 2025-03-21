@@ -1,0 +1,27 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+pair<int,int>findEvenOdd(vector<int>arr)
+{
+    int even=0;
+    int odd=0;
+    for(auto it:arr)
+    {
+         if(it%2==0)
+    {
+        even++;
+    }
+    else
+    {
+        odd++;
+    }   
+    }
+    return {even,odd};
+}
+int main()
+{
+    vector<int>arr={1,2,3,4,5,6,7,8,9};
+    pair<int,int>res=findEvenOdd(arr);
+    cout<<"find the even number is:"<<res.first<<" \n"<<"find the odd number:"<<res.second;
+    return 0;
+}
